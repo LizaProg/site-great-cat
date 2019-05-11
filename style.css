@@ -1,0 +1,9 @@
+.page-header {
+    padding: 10px;
+    background-color: #eeeeee;
+}
+
+.page-header .header-logo{
+    width: 205px;
+    height: 55px;
+}
