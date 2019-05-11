@@ -1,9 +1,29 @@
+/*удалить потом чтоб было видно лого*/
 .page-header {
     padding: 10px;
     background-color: #eeeeee;
 }
 
-.page-header .header-logo{
+.page-footer {
+    padding: 10px;
+    background-color: #eeeeee;
+}
+
+/*конец удалить*/
+
+.page-header .header-logo {
     width: 205px;
     height: 55px;
 }
+
+.cat-reference dl dd img {
+    width: 100px;
+    height: 100px;
+}
+
+.popular-and-price .popular-items .catalog-item img {
+    width: 306px;
+    height: 206px;
+}
+
+
