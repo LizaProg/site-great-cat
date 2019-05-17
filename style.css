@@ -1,4 +1,5 @@
 body {
+    min-width: 1040px;
     margin: 0;
     padding: 0;
     font-size: 18px;
@@ -8,13 +9,25 @@ body {
     background-color: #fff;
 }
 
-/*Контейнер для выравнивания посередине*/
+/*Clearfix*/
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Контейнер для выравнивания по середине*/
+.container {
+    width: 1020px;
+    margin: 0 auto;
+}
 
 /*Логотип Шапка*/
 
 .header-logo {
     width: 205px;
     height: 55px;
+    float: left;
 }
 
 .page-footer {
@@ -25,10 +38,17 @@ body {
     color: #c3c3c3;
     background: url("img/header-bg.jpg") no-repeat center;
     background-size: cover;
+    min-height: 490px;
+    padding-top: 35px;
 }
 
 .main-nav {
+    padding: 0;
+    margin: 0;
+    margin-left: 125px;
     list-style: none;
+    float: left;
+    width: 520px;
 }
 
 .main-nav li {
@@ -61,6 +81,13 @@ body {
     text-decoration: none;
 }
 
+.btn-quick-order {
+    float: right;
+}
+
+.header-top {
+    margin-bottom: 125px;
+}
 
 /*Кнопки*/
 .btn {
@@ -80,16 +107,22 @@ body {
 /*Преимущества*/
 .features ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .feature-item {
+    width: 278px;
+    padding-right: 30px;
+    padding-left: 30px;
     text-align: center;
     border-left: 1px solid #d9d9d9;
     padding-top: 90px;
+    float: left;
 }
 
 .feature-item:first-child {
-    border: none;
+    border: 1px solid transparent;
 }
 
 .feature-item p {
@@ -116,9 +149,16 @@ body {
     background: url("img/feature-3.png") no-repeat top center;
 }
 
+.features {
+    padding-top: 50px;
+    padding-bottom: 55px;
+}
+
 /*Блок теория*/
 .cat-reference {
     background-color: #f2f2f2;
+    padding-top: 70px;
+    padding-bottom: 90px;
 }
 
 .section-title {
@@ -139,8 +179,22 @@ body {
     font-style: italic;
 }
 
+.cat-reference dl {
+    width: 820px;
+}
+
+.cat-reference dt {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
 .cat-reference dd {
+    margin: 0;
     font-size: 16px;
+}
+
+.cat-reference dd + dt {
+    margin-top: 70px;
 }
 
 .cat-reference dd img {
@@ -160,9 +214,19 @@ body {
 }
 
 /*Отзывы*/
+.reviews {
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
 .review-item {
+    width: 377px;
+    /* сверху | справа | снизу | слева */
+    margin: 0 80px 0 0;
+    padding: 0 0 0 50px;
     font-size: 16px;
     border-left: 3px solid #a38b70;
+    float: left;
 }
 
 .review-author {
@@ -184,15 +248,33 @@ body {
 
 .popular-and-price {
     background-color: #f2f2f2;
+    padding-top: 70px;
+    padding-bottom: 90px;
 }
 
 .catalog-item {
+    width: 308px;
+    margin-right: 48px;
     font-size: 16px;
+    float: left;
+}
+
+.catalog-item img {
+    max-width: 100%;
+    height: auto;
 }
 
 .catalog-item h3 {
     font-size: 16px;
     color: #000;
+}
+
+.catalog-item:last-child {
+    margin-right: 0;
+}
+
+.popular-items {
+    margin-bottom: 50px;
 }
 
 /*Прайс-лист*/
@@ -229,6 +311,10 @@ body {
 }
 
 /*Форма для вопросов*/
+.feedback {
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
 
 .feedback-form-group {
     padding: 10px 0;
@@ -268,6 +354,7 @@ body {
 }
 
 .feedback-form {
+    width: 630px;
     background: url("img/write.jpg") no-repeat 100% 40px;
     padding-right: 390px;
 }
@@ -275,6 +362,8 @@ body {
 /*Подвал*/
 
 .page-footer {
+    padding-top: 45px;
+    padding-bottom: 50px;
     background-color: #363636;
     color: #c3c3c3;
 }
@@ -336,5 +425,37 @@ body {
     color: rgba(255, 255, 255, 0.3);
 }
 
+.footer-top {
+    margin-bottom: 45px;
+}
 
+.footer-middle {
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
 
+.footer-bottom {
+    padding-top: 50px;
+}
+
+.footer-logo{
+    float: left;
+    width: 205px;
+    height: 55px;
+}
+
+.footer-menu{
+    float: left;
+    width: 150px;
+    margin-right: 20px;
+}
+
+.footer-social{
+    width: 490px;
+    float: left;
+}
+
+.footer-copyright{
+    width: 236px;
+    float: right;
+}
