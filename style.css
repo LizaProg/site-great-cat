@@ -30,6 +30,11 @@ body {
     float: left;
 }
 
+.header-logo img {
+    width: 205px;
+    height: 55px;
+}
+
 .page-footer {
     margin-top: 20px;
 }
@@ -46,6 +51,7 @@ body {
     padding: 0;
     margin: 0;
     margin-left: 125px;
+    margin-top: 18px;
     list-style: none;
     float: left;
     width: 520px;
@@ -53,6 +59,12 @@ body {
 
 .main-nav li {
     text-transform: uppercase;
+    float: left;
+    margin-right: 50px;
+}
+
+.main-nav li:last-child {
+    margin-right: 0;
 }
 
 .main-nav a {
@@ -81,27 +93,55 @@ body {
     text-decoration: none;
 }
 
-.btn-quick-order {
-    float: right;
-}
 
 .header-top {
     margin-bottom: 125px;
 }
+
 
 /*Кнопки*/
 .btn {
     color: #a38b70;
     text-decoration: none;
     text-transform: uppercase;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid #a38b70;
+    padding: 10px;
+    width: 146px;
+    word-wrap: break-word;
+    text-align: center;
+    font: inherit;
+    border-radius: 2px;
 }
 
 .btn:hover {
     color: #8d745a;
+    border-color: #8d745a;
 }
 
 .btn:active {
     color: rgba(141, 116, 90, 0.3);
+    border-color: #8d745a;
+}
+
+.btn-quick-order {
+    float: right;
+    margin-top: 6px;
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-quick-order:hover {
+    color: #404040;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.btn-quick-order:active {
+    color: rgba(64, 64, 64, 0.3);
+    background-color: #fff;
+    border-color: #fff;
 }
 
 /*Преимущества*/
@@ -119,6 +159,7 @@ body {
     border-left: 1px solid #d9d9d9;
     padding-top: 90px;
     float: left;
+    position: relative;
 }
 
 .feature-item:first-child {
@@ -127,6 +168,17 @@ body {
 
 .feature-item p {
     font-size: 16px;
+    margin: 0;
+}
+
+.feature-item::before {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 137px;
+    background: url("img/sprite.png") no-repeat;
 }
 
 .feature-title {
@@ -135,23 +187,37 @@ body {
     line-height: 30px;
     font-weight: bold;
     color: #a38b70;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
-.feature-choice {
-    background: url("img/feature-1.png") no-repeat top center;
+.feature-choice::before {
+    background-position: -5px -5px;
 }
 
-.feature-quality {
-    background: url("img/feature-2.png") no-repeat top center;
+.feature-quality::before {
+    background-position: -5px -76px;
 }
 
-.feature-safety {
-    background: url("img/feature-3.png") no-repeat top center;
+.feature-safety::before {
+    background-position: 1px -143px;
 }
 
 .features {
     padding-top: 50px;
     padding-bottom: 55px;
+}
+
+/*Заголовки*/
+.section-title {
+    /* сверху | справа | снизу | слева */
+    /*отступ справа для кнопки*/
+    margin: 0 180px 60px 0;
+    font-family: "Georgia", serif;
+    font-size: 45px;
+    line-height: 55px;
+    font-weight: bold;
+    color: #a38b70;
 }
 
 /*Блок теория*/
@@ -161,26 +227,25 @@ body {
     padding-bottom: 90px;
 }
 
-.section-title {
-    font-family: "Georgia", serif;
-    font-size: 45px;
-    line-height: 55px;
-    font-weight: bold;
-    color: #a38b70;
+.cat-reference .container{
+    position: relative;
+}
+
+.to-full-reference{
+    position: absolute;
+    top: 5px;
+    right: 0;
 }
 
 .reference-title {
     font-size: 24px;
-}
-
-.reference-source {
-    font-size: 16px;
-    color: #666;
-    font-style: italic;
+    display: inline;
 }
 
 .cat-reference dl {
     width: 820px;
+    padding: 0;
+    margin: 0;
 }
 
 .cat-reference dt {
@@ -191,18 +256,51 @@ body {
 .cat-reference dd {
     margin: 0;
     font-size: 16px;
+    position: relative;
+    min-height: 100px;
+    padding-left: 130px;
+}
+
+.cat-reference dd img {
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.cat-reference dd p{
+    margin: 0;
+}
+
+.cat-reference .reference-title{
+    margin: 0;
 }
 
 .cat-reference dd + dt {
     margin-top: 70px;
 }
 
-.cat-reference dd img {
-    border-radius: 5px;
+.reference-source {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+}
+
+.reference-source a::after{
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -10px;
+    background: url("img/sprite.png") no-repeat -5px -210px;
 }
 
 .reference-source a {
     color: #a38b70;
+    position: relative;
 }
 
 .reference-source a:hover {
@@ -229,9 +327,23 @@ body {
     float: left;
 }
 
+.review-item p{
+    margin: 0 0 15px 0;
+}
+
 .review-author {
     font-style: italic;
     font-weight: bold;
+}
+
+.reviews .container{
+    position: relative;
+}
+
+.to-all-reviews{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 /*Популярные товары*/
@@ -252,31 +364,82 @@ body {
     padding-bottom: 90px;
 }
 
+.popular-and-price .container{
+    position: relative;
+}
+
 .catalog-item {
-    width: 308px;
+    width: 262px;
+    border: 1px solid #d8d8d8;
     margin-right: 48px;
     font-size: 16px;
     float: left;
+    /* сверху | справа | снизу | слева */
+    padding: 15px 22px 15px 22px;
+    position: relative;
+    padding-top: 221px;
 }
 
 .catalog-item img {
-    max-width: 100%;
-    height: auto;
+    /*max-width: 100%;
+    height: auto;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 306px;
+    height: 206px;
 }
 
 .catalog-item h3 {
     font-size: 16px;
     color: #000;
+    float: left;
+    max-width: 205px;
+    margin: 0 0 20px 0;
 }
 
 .catalog-item:last-child {
     margin-right: 0;
 }
 
+.catalog-item-price{
+    float: right;
+    max-width: 55px;
+    margin-bottom: 20px;
+}
+
 .popular-items {
     margin-bottom: 50px;
 }
 
+.to-catalog{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.catalog-item .btn-info{
+    float: left;
+    clear: left;
+}
+
+.catalog-item .btn-buy{
+    float: right;
+}
+
+.catalog-item .btn{
+    width: 101px;
+    color: #fff;
+    background-color: #a38b70;
+}
+
+.catalog-item .btn:hover{
+    background-color: #8d745a;
+}
+
+.catalog-item .btn:active{
+    color: rgba(255, 255, 255, 0.3);
+}
 /*Прайс-лист*/
 
 .price-list {
@@ -298,16 +461,27 @@ body {
 
 .price-list th,
 .price-list td {
-    padding: 5px 10px;
+
+    padding: 10px 17px;
 }
 
 .price-list .price-number {
     text-align: center;
+    width: 15px;
 }
 
 .price-list .price-name {
     font-weight: bold;
     color: #000;
+    width: 422px;
+}
+
+.price-list .price-master{
+    width: 306px;
+}
+
+.price-list .price-cost{
+    width: 135px;
 }
 
 /*Форма для вопросов*/
@@ -438,24 +612,24 @@ body {
     padding-top: 50px;
 }
 
-.footer-logo{
+.footer-logo {
     float: left;
     width: 205px;
     height: 55px;
 }
 
-.footer-menu{
+.footer-menu {
     float: left;
     width: 150px;
     margin-right: 20px;
 }
 
-.footer-social{
+.footer-social {
     width: 490px;
     float: left;
 }
 
-.footer-copyright{
+.footer-copyright {
     width: 236px;
     float: right;
 }
